@@ -7,8 +7,8 @@ import javax.persistence.Persistence;
 import org.apache.logging.log4j.LogManager;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 import es.miw.jeeecp.models.daos.DaoFactory;
-import es.miw.jeeecp.models.daos.TemaDao;
-import es.miw.jeeecp.models.daos.VotoDao;
+import es.miw.jeeecp.models.daos.UsuarioDao;
+import es.miw.jeeecp.models.daos.FavoritoDao;
 
 public class DaoJpaFactory extends DaoFactory {
     private static final String PERSISTENCE_UNIT = "BBDD";
@@ -36,13 +36,13 @@ public class DaoJpaFactory extends DaoFactory {
     }
 
 	@Override
-	public VotoDao getVotoDao() {
-		return new VotoDaoJpa();
+	public FavoritoDao getVotoDao() {
+		return new FavoritoDaoJpa();
 	}
 
 	@Override
-	public TemaDao getTemaDao() {
-		return new TemaDaoJpa();
+	public UsuarioDao getTemaDao() {
+		return new UsuarioDaoJpa();
 	}
 
  

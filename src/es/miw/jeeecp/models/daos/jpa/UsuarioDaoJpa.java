@@ -5,16 +5,16 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import es.miw.jeeecp.models.daos.TemaDao;
+import es.miw.jeeecp.models.daos.UsuarioDao;
 import es.miw.spotify.models.entities.Favorito;
 import es.miw.spotify.models.entities.Usuario;
 
-public class TemaDaoJpa extends GenericDaoJpa<Usuario, Integer> implements TemaDao {
+public class UsuarioDaoJpa extends GenericDaoJpa<Usuario, Integer> implements UsuarioDao {
 	 private static final String BUSCAR_VOTO_POR_IP = "SELECT t FROM TemaEntity t JOIN t.votos v where v.ip = :ip and t.id = :idTema";
 	 private static final String BUSCAR_TEMA_POR_NOMBRE = "SELECT t FROM TemaEntity t where LOWER(t.tema) = LOWER(:nombreTema) ";
 
 	 
-	 public TemaDaoJpa() {
+	 public UsuarioDaoJpa() {
         super(Usuario.class);
     }
     public List<Favorito> findByIp(String ip,Integer idTema) {
