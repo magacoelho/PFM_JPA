@@ -4,9 +4,10 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
 import es.miw.jeeecp.models.daos.TemaDao;
-import es.miw.jeeecp.models.entities.Usuario;
-import es.miw.jeeecp.models.entities.Favorito;
+import es.miw.spotify.models.entities.Favorito;
+import es.miw.spotify.models.entities.Usuario;
 
 public class TemaDaoJpa extends GenericDaoJpa<Usuario, Integer> implements TemaDao {
 	 private static final String BUSCAR_VOTO_POR_IP = "SELECT t FROM TemaEntity t JOIN t.votos v where v.ip = :ip and t.id = :idTema";

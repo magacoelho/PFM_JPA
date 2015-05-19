@@ -1,4 +1,4 @@
-package es.miw.jeeecp.models.entities;
+package es.miw.spotify.models.entities;
 
 import java.lang.String;
 
@@ -12,7 +12,7 @@ import javax.persistence.UniqueConstraint;
 
 
 @Entity
-@Table(name = "VOTO", uniqueConstraints= @UniqueConstraint(columnNames = { "IP","ID" }))
+@Table(name = "Favorito", uniqueConstraints= @UniqueConstraint(columnNames = { "IP","ID" }))
 //@IdClass(VotoPK.class)
 public class Favorito {
 	@Id

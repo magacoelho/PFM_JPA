@@ -1,4 +1,4 @@
-package es.miw.jeeecp.models.entities;
+package es.miw.spotify.models.entities;
 
 import java.io.Serializable;
 import java.lang.String;
