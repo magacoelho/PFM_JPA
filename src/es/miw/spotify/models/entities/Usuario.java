@@ -12,50 +12,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(uniqueConstraints= @UniqueConstraint(columnNames = { "NAME" }))
+@Table(name ="users")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = -3632602244844491316L;
 
 	@Id
 	@GeneratedValue
 	private Integer id;
+    
+	@Column(name = "username")
+	private String nombre;
+	
+	@Column(name = "password")
+	private String contrasenha;
+	
+	@Column(name = "enabled")
+	private boolean disponible;
 
-	@Column(name = "TEMA")
-	private String tema;
-	@Column(name = "PREGUNTA")
-	private String pregunta;
-
-	//@OneToMany(cascade = { CascadeType.ALL }, mappedBy = "tema")
-	// @OneToMany(cascade = {CascadeType.ALL})
 	@OneToMany(cascade = { CascadeType.ALL })
-	private List<Favorito> votos = new ArrayList<Favorito>();
-
-	public Usuario(String tema, String pregunta) {
-		this.tema = tema;
-		this.pregunta = pregunta;
-	}
+	private List<Favorito> favoritos = new ArrayList<Favorito>();
 
 	public Usuario() {
 		super();
 	}
-
-	public String getTema() {
-		return tema;
-	}
-
-	public void setTema(String tema) {
-		this.tema = tema;
-	}
-
-	public String getPregunta() {
-		return pregunta;
-	}
-
-	public void setPregunta(String pregunta) {
-		this.pregunta = pregunta;
+	
+	public Usuario(String nombre, String contrasenha, boolean disponible) {
+		super();
+		this.nombre = nombre;
+		this.contrasenha = contrasenha;
+		this.disponible = disponible;
 	}
 
 	public Integer getId() {
@@ -66,27 +53,38 @@ public class Usuario implements Serializable {
 		this.id = id;
 	}
 
-	public List<Favorito> getVotos() {
-		return votos;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setVotos(List<Favorito> votos) {
-		this.votos = votos;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	@Override
-	public String toString() {
-		return "Tema[" + id + ":" + tema + ":" + pregunta + ":" + votos + "]";
+	public String getContrasenha() {
+		return contrasenha;
 	}
 
-	public boolean equals(Object obj) {
-		Usuario other = (Usuario) obj;
-		return getId().intValue() == other.getId().intValue();
+	public void setContrasenha(String contrasenha) {
+		this.contrasenha = contrasenha;
 	}
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + getId().intValue();
-		return result;
+
+	public boolean isDisponible() {
+		return disponible;
 	}
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
+	}
+
+	public List<Favorito> getFavoritos() {
+		return favoritos;
+	}
+
+	public void setFavoritos(List<Favorito> favoritos) {
+		this.favoritos = favoritos;
+	}
+	
+
+	
 }

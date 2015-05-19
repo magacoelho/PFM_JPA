@@ -36,12 +36,12 @@ public class DaoJpaFactory extends DaoFactory {
     }
 
 	@Override
-	public FavoritoDao getVotoDao() {
+	public FavoritoDao getFavoritoDao() {
 		return new FavoritoDaoJpa();
 	}
 
 	@Override
-	public UsuarioDao getTemaDao() {
+	public UsuarioDao getUsuarioDao() {
 		return new UsuarioDaoJpa();
 	}
 
