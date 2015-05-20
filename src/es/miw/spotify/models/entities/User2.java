@@ -14,9 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-@Entity
-@Table(name ="users")
-public class User implements Serializable {
+public class User2 implements Serializable {
 	private static final long serialVersionUID = -3632602244844491316L;
 
 	@Id
@@ -37,17 +35,17 @@ public class User implements Serializable {
 	@Column(name = "createtime")
 	private LocalDateTime fechaHoraCreacion;
 	
-	@OneToMany(cascade = { CascadeType.ALL })
-	private List<UsuarioRol> usuarioRoles = new ArrayList<UsuarioRol>(); 
+	//@OneToMany(cascade = { CascadeType.ALL })
+	//private List<UsuarioRol> usuarioRoles = new ArrayList<UsuarioRol>(); 
 
 	@OneToMany(cascade = { CascadeType.ALL })
-	private List<Favorite> favoritos = new ArrayList<Favorite>();
+	private List<Favorite2> favoritos = new ArrayList<Favorite2>();
 
-	public User() {
+	public User2() {
 		super();
 	}
 	
-	public User(String nombre, String contrasenha, boolean disponible) {
+	public User2(String nombre, String contrasenha, boolean disponible) {
 		super();
 		this.nombre = nombre;
 		this.contrasenha = contrasenha;
@@ -86,11 +84,11 @@ public class User implements Serializable {
 		this.disponible = disponible;
 	}
 
-	public List<Favorite> getFavoritos() {
+	public List<Favorite2> getFavoritos() {
 		return favoritos;
 	}
 
-	public void setFavoritos(List<Favorite> favoritos) {
+	public void setFavoritos(List<Favorite2> favoritos) {
 		this.favoritos = favoritos;
 	}
 	

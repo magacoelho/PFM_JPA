@@ -19,5 +19,9 @@ public abstract class DaoFactory {
     public abstract FavoriteDao getFavoriteDao();
     
     public abstract UserDao getUserDao();
+    
+    public abstract UserRoleDao getUserRoleDao();
+    
+    public abstract FavoriteTypeDao getFavoriteType();
    
 }

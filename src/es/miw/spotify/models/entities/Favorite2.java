@@ -11,9 +11,8 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 
-@Entity
-@Table(name = "Favorite")
-public class Favorite {
+
+public class Favorite2 {
 	@Id
 	@GeneratedValue
 	private Integer id;
@@ -23,11 +22,11 @@ public class Favorite {
 	@Enumerated(EnumType.ORDINAL)
     private FavoriteType tipoFavorito;
 
-	public Favorite() {
+	public Favorite2() {
 		super();
 	}
 
-	public Favorite(String idFavorito, FavoriteType tipoFavorito) {
+	public Favorite2(String idFavorito, FavoriteType tipoFavorito) {
 		super();
 		this.idFavorito = idFavorito;
 		this.tipoFavorito = tipoFavorito;
@@ -83,7 +82,7 @@ public class Favorite {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Favorite other = (Favorite) obj;
+		Favorite2 other = (Favorite2) obj;
 		if (id == null) {
 			if (other.id != null)
 				return false;
