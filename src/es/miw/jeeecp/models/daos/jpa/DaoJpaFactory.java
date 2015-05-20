@@ -53,7 +53,7 @@ public class DaoJpaFactory extends DaoFactory {
 	@Override
 	public UserRoleDao getUserRoleDao() {
 		
-		return null;
+		return new UserRoleDaoJpa();
 	}
 
 	@Override
