@@ -16,8 +16,8 @@ public abstract class DaoFactory {
         return factory;
     }
 
-    public abstract FavoritoDao getFavoritoDao();
+    public abstract FavoriteDao getFavoriteDao();
     
-    public abstract UsuarioDao getUsuarioDao();
+    public abstract UserDao getUserDao();
    
 }

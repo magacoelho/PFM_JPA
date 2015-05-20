@@ -2,6 +2,7 @@ package es.miw.spotify.models.entities;
 
 import java.io.Serializable;
 import java.lang.String;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name ="users")
-public class Usuario implements Serializable {
+public class User implements Serializable {
 	private static final long serialVersionUID = -3632602244844491316L;
 
 	@Id
@@ -30,15 +31,23 @@ public class Usuario implements Serializable {
 	
 	@Column(name = "enabled")
 	private boolean disponible;
+	
+	private String email;
+	
+	@Column(name = "createtime")
+	private LocalDateTime fechaHoraCreacion;
+	
+	@OneToMany(cascade = { CascadeType.ALL })
+	private List<UsuarioRol> usuarioRoles = new ArrayList<UsuarioRol>(); 
 
 	@OneToMany(cascade = { CascadeType.ALL })
-	private List<Favorito> favoritos = new ArrayList<Favorito>();
+	private List<Favorite> favoritos = new ArrayList<Favorite>();
 
-	public Usuario() {
+	public User() {
 		super();
 	}
 	
-	public Usuario(String nombre, String contrasenha, boolean disponible) {
+	public User(String nombre, String contrasenha, boolean disponible) {
 		super();
 		this.nombre = nombre;
 		this.contrasenha = contrasenha;
@@ -77,11 +86,11 @@ public class Usuario implements Serializable {
 		this.disponible = disponible;
 	}
 
-	public List<Favorito> getFavoritos() {
+	public List<Favorite> getFavoritos() {
 		return favoritos;
 	}
 
-	public void setFavoritos(List<Favorito> favoritos) {
+	public void setFavoritos(List<Favorite> favoritos) {
 		this.favoritos = favoritos;
 	}
 	

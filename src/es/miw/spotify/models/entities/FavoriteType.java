@@ -1,6 +1,6 @@
 package es.miw.spotify.models.entities;
 
-public enum TipoFavorito {
+public enum FavoriteType {
 	ALBUM, INTERPRETE, TEMA; 
 
 }
