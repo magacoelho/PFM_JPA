@@ -4,7 +4,6 @@
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 		<class>es.miw.spotify.models.entities.Favorite</class>
 	    <class>es.miw.spotify.models.entities.User</class>
-	    <class>es.miw.spotify.models.entities.UsuarioRol</class>
         <properties>
             <property name="eclipselink.ddl-generation" value="none" /> <!--drop-and-create-tables   none-->
             <property name="eclipselink.logging.level" value="INFO" /> <!-- OFF,WARNING,INFO,FINE,ALL -->
