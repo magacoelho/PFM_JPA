@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
