@@ -1,8 +1,8 @@
-package es.miw.jeeecp.models.daos.jpa;
+package es.miw.spotify.models.daos.jpa;
 
 
-import es.entities.generates2.Favorite;
-import es.miw.jeeecp.models.daos.FavoriteDao;
+import es.miw.spotify.models.daos.FavoriteDao;
+import es.spotify.models.entities.Favorite;
 public class FavoriteDaoJpa extends GenericDaoJpa<Favorite, Integer> implements FavoriteDao {
 
 	public FavoriteDaoJpa() {

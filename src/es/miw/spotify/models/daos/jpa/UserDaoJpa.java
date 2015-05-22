@@ -1,7 +1,7 @@
-package es.miw.jeeecp.models.daos.jpa;
+package es.miw.spotify.models.daos.jpa;
 
-import es.entities.generates2.User;
-import es.miw.jeeecp.models.daos.UserDao;
+import es.miw.spotify.models.daos.UserDao;
+import es.spotify.models.entities.User;
 
 
 public class UserDaoJpa extends GenericDaoJpa<User, Integer> implements UserDao {

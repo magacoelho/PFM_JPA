@@ -1,6 +1,6 @@
-package es.miw.jeeecp.models.daos;
+package es.miw.spotify.models.daos;
 
-import es.entities.generates2.Favorite;
+import es.spotify.models.entities.Favorite;
 
 
 

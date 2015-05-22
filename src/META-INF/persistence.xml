@@ -3,10 +3,10 @@
 	<persistence-unit name="BBDD" transaction-type="RESOURCE_LOCAL">
         <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
-	    <class>es.entities.generates2.Favorite</class>
-	    <class>es.entities.generates2.FavoriteType</class>
-	    <class>es.entities.generates2.Role</class>
-	    <class>es.entities.generates2.User</class>
+	    <class>es.spotify.models.entities.Favorite</class>
+	    <class>es.spotify.models.entities.FavoriteType</class>
+	    <class>es.spotify.models.entities.Role</class>
+	    <class>es.spotify.models.entities.User</class>
         <properties>
             <property name="eclipselink.ddl-generation" value="drop-and-create-tables" /> <!--drop-and-create-tables   none-->
             <property name="eclipselink.logging.level" value="INFO" /> <!-- OFF,WARNING,INFO,FINE,ALL -->

@@ -1,4 +1,4 @@
-package es.miw.jeeecp.models.daos;
+package es.miw.spotify.models.daos;
 
 import java.util.List;
 

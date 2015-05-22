@@ -1,6 +1,6 @@
-package es.miw.jeeecp.models.daos;
+package es.miw.spotify.models.daos;
 
-import es.miw.jeeecp.models.daos.jpa.DaoJpaFactory;
+import es.miw.spotify.models.daos.jpa.DaoJpaFactory;
 
 public abstract class DaoFactory {
     public static DaoFactory factory = null;
@@ -22,6 +22,6 @@ public abstract class DaoFactory {
     
     public abstract UserRoleDao getUserRoleDao();
     
-    public abstract FavoriteTypeDao getFavoriteType();
+    public abstract FavoriteTypeDao getFavoriteTypeDao();
    
 }
