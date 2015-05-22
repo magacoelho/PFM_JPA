@@ -1,34 +1,41 @@
 package es.miw.spotify.models.daos.jpa;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
+
+
 import es.miw.spotify.models.daos.UserDao;
+import es.spotify.models.entities.Favorite;
+import es.spotify.models.entities.FavoriteType;
 import es.spotify.models.entities.User;
 
 
 public class UserDaoJpa extends GenericDaoJpa<User, Integer> implements UserDao {
-//	 private static final String BUSCAR_VOTO_POR_IP = "SELECT t FROM TemaEntity t JOIN t.votos v where v.ip = :ip and t.id = :idTema";
-//	 private static final String BUSCAR_TEMA_POR_NOMBRE = "SELECT t FROM TemaEntity t where LOWER(t.tema) = LOWER(:nombreTema) ";
-//
-//	 
-	 public UserDaoJpa() {
+ 
+	 private static final String FIND_BY_FAVORITE_TYPE = "SELECT u FROM User u JOIN u.favorites f where f.favoritetype = :favoritetype and f.id = :userId";
+
+	public UserDaoJpa() {
         super(User.class);
     }
-//    public List<Favorite2> findByIp(String ip,Integer idTema) {
-//        EntityManager entityManager = DaoJpaFactory.getEntityManagerFactory().createEntityManager();
-//        Query query = entityManager.createQuery(BUSCAR_VOTO_POR_IP);
-//        query.setParameter("ip", ip);
-//        query.setParameter("idTema", idTema);
-//        List<Favorite2> listaResultado =(List<Favorite2>) query.getResultList();
-//        entityManager.close();
-//        return listaResultado;
-//    }
-//    public List<User2> findByName(String name) {
-//        EntityManager entityManager = DaoJpaFactory.getEntityManagerFactory().createEntityManager();
-//        Query query = entityManager.createQuery(BUSCAR_TEMA_POR_NOMBRE);
-//        query.setParameter("nombreTema", name);
-//        List<User2> listaResultado =(List<User2>) query.getResultList();
-//        entityManager.close();
-//        return listaResultado;
-//    }
-  
+
+	@Override
+	public List<Favorite> getFavoriteByFavoriteType(FavoriteType favoriteType,
+			int userId) { EntityManager entityManager = DaoJpaFactory.getEntityManagerFactory().createEntityManager();
+	        Query query = entityManager.createQuery(FIND_BY_FAVORITE_TYPE);
+	        query.setParameter("favoritetype", favoriteType);
+	        query.setParameter("userId", userId);
+	        List<Favorite> listaResultado =(List<Favorite>) query.getResultList();
+	        entityManager.close();
+	        return listaResultado;
+	}
+
+	@Override
+	public boolean isAdminUser(int idUser) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 }

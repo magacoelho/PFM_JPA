@@ -1,7 +1,9 @@
 package es.main;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -21,8 +23,7 @@ public class Principal {
 		 Map<String, String> properties = new HashMap<>();
          properties. put(PersistenceUnitProperties.DDL_GENERATION,
                  PersistenceUnitProperties.DROP_AND_CREATE);
-         EntityManager em = Persistence.createEntityManagerFactory("BBDD", properties)
-                 .createEntityManager();
+         EntityManager em = Persistence.createEntityManagerFactory("BBDD", properties).createEntityManager();
          
          
        Role r= new Role("jsjsjjs","Super");
@@ -40,10 +41,14 @@ public class Principal {
        u99.getFavorites().add(f);
        u99.getUserRoles().add(r);
        DaoJpaFactory.getFactory().getUserDao().update(u99);
+      
        
-       System.out.println( DaoJpaFactory.getFactory().getUserDao().read(2));
-    
-     
+       u99=DaoJpaFactory.getFactory().getUserDao().read(2);
+       System.out.println(u99);
+       System.out.println(DaoJpaFactory.getFactory().getUserDao().getFavoriteByFavoriteType(ft, 2));
+       List<Favorite> lista =  DaoJpaFactory.getFactory().getUserDao().getFavoriteByFavoriteType(ft, 2);
+       System.out.println(lista);
+       
 	}
 
 }
