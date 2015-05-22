@@ -1,7 +1,9 @@
 package es.miw.jeeecp.models.daos;
 
-import es.miw.spotify.models.entities.Favorite2;
+import es.entities.generates2.Favorite;
 
-public interface FavoriteDao extends GenericDao<Favorite2, Integer> {
+
+
+public interface FavoriteDao extends GenericDao<Favorite, Integer> {
 	
 }

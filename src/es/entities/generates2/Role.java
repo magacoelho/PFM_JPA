@@ -1,13 +1,10 @@
 package es.entities.generates2;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 
-/**
- * The persistent class for the user_roles database table.
- * 
- */
 @Entity
 @Table(name="role")
 public class Role implements Serializable {
@@ -17,14 +14,11 @@ public class Role implements Serializable {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="id")
 	private int Id;
+	private String idUUID;
 
 	private String role;
-
-	//bi-directional many-to-one association to User
-//	@ManyToOne
-//	@JoinColumn(name="username", referencedColumnName="username")
-//	private User user;
-
+	
+	
 	public Role() {
 	}
 
@@ -47,12 +41,14 @@ public class Role implements Serializable {
 		this.role = role;
 	}
 
-//	public User getUser() {
-//		return this.user;
-//	}
-//
-//	public void setUser(User user) {
-//		this.user = user;
-//	}
+
+	public String getIdUUID() {
+		return idUUID;
+	}
+
+
+	public void setIdUUID(String idUUID) {
+		this.idUUID = idUUID;
+	}
 
 }

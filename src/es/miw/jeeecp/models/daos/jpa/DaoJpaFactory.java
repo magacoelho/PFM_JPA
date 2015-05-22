@@ -52,14 +52,12 @@ public class DaoJpaFactory extends DaoFactory {
 
 	@Override
 	public UserRoleDao getUserRoleDao() {
-		
-		return new UserRoleDaoJpa();
+	   return new UserRoleDaoJpa();
 	}
 
 	@Override
 	public FavoriteTypeDao getFavoriteType() {
-		// TODO Auto-generated method stub
-		return null;
+		return new FavoriteTypeDaoJpa();
 	}
 
  

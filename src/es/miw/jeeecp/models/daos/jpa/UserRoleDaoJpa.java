@@ -7,9 +7,7 @@ import es.miw.jeeecp.models.daos.UserRoleDao;
 
 public class UserRoleDaoJpa extends GenericDaoJpa<Role, Integer> implements UserRoleDao {
 	
-
-	 
-	 public UserRoleDaoJpa() {
+	public UserRoleDaoJpa() {
         super(Role.class);
     }
     

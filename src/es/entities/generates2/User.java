@@ -6,10 +6,6 @@ import java.sql.Timestamp;
 import java.util.List;
 
 
-/**
- * The persistent class for the users database table.
- * 
- */
 @Entity
 @Table(name="users")
 public class User implements Serializable {
@@ -18,6 +14,7 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
+	private String idUUID;
 
 	@Column(name="create_time")
 	private Timestamp createTime;
@@ -26,15 +23,12 @@ public class User implements Serializable {
 
 	private byte enabled;
 
-	private String idUUID;
 
 	private String password;
 
-	//bi-directional many-to-one association to Favorite
 	@OneToMany
 	private List<Favorite> favorites;
 
-	//bi-directional many-to-one association to UserRole
 	@OneToMany
 	private List<Role> userRoles;
 
@@ -105,19 +99,5 @@ public class User implements Serializable {
 	public void setUserRoles(List<Role> userRoles) {
 		this.userRoles = userRoles;
 	}
-
-//	public UserRole addUserRole(UserRole userRole) {
-//		getUserRoles().add(userRole);
-//		userRole.setUser(this);
-//
-//		return userRole;
-//	}
-//
-//	public UserRole removeUserRole(UserRole userRole) {
-//		getUserRoles().remove(userRole);
-//		userRole.setUser(null);
-//
-//		return userRole;
-//	}
 
 }
